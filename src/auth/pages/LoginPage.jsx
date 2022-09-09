@@ -89,7 +89,7 @@ export const LoginPage = () => {
                 disabled={isChecking} >
             Google
             </button>
-            <Link component={RouterLink} color="inherit" to="/auth/register" style={{display: 'flex', justifyContent: 'end'}}>
+            <Link component={RouterLink} color="inherit" to="/auth/register" style={{display: 'flex', justifyContent: 'end'}} className='linkColor'>
               Crear una cuenta
             </Link>
           </div>

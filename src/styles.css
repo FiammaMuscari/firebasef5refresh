@@ -83,3 +83,13 @@ justify-content: space-around;
 display: flex;
 }
 }
+/*links login register*/
+
+.linkColor{
+    color:white!important;
+   
+}
+.linkColor:hover{
+    color:#0d6efd!important;
+   
+}

@@ -1,11 +1,11 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "../../hooks/useForm";
 import Typed from "react-typed";
 import "../../../src/styles.css"
 import { Link, Link as RouterLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import {startCreatingUserWithEmail} from '../store/auth/thunks'
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 
 
@@ -44,7 +44,7 @@ export const RegisterPage = () => {
   const dispatch = useDispatch()
 
   const [formSubmited, setFormSubmited] = useState(false);
-
+  const navigate = useNavigate();
   const {
     formState,
     displayName,
@@ -90,6 +90,7 @@ export const RegisterPage = () => {
             loop
           />
           <div className="d-grid gap-2 mt-3">
+          <p style={{margin:'auto'}}>Tu nombre debe tener minimo 6 letras</p>
             <input
               className="inputlogin"
               style={{width:"40vw", borderRadius:"0.2em", padding:"0.5em"}}
@@ -100,6 +101,7 @@ export const RegisterPage = () => {
             value={displayName}
             onChange={onInputChange}
             />
+            
             <input
               className="inputlogin"
               style={{width:"40vw", borderRadius:"0.2em", padding:"0.5em"}}
@@ -124,7 +126,7 @@ export const RegisterPage = () => {
             Crear una cuenta
             </button>
             
-            <Link component={RouterLink} color="inherit" to="/auth/login" style={{display: 'flex', justifyContent: 'end'}}>
+            <Link component={RouterLink} color="inherit" to="/auth/login" style={{display: 'flex', justifyContent: 'end' ,color:'white'}} className='linkColor'>
             Ya tengo una cuenta
             </Link>
           </div>
